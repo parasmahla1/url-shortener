@@ -2,10 +2,7 @@ import Link from "next/link";
 
 async function fetchUrls() {
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/urls`,
-    {
-      cache: "force-cache",
-    }
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/urls`
   );
   if (!response.ok) {
     throw new Error("Failed to fetch urls");
