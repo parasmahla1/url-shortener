@@ -5,9 +5,13 @@ import { revalidatePath } from "next/cache";
 
 const shortenUrl = async (formData: FormData) => {
     const originalUrl : string = formData.get('originalUrl') as string;
+    if (!originalUrl?.trim()) {
+        throw new Error('originalUrl is required');
+    }
+
     console.log("Orignal URL Passed is ", originalUrl);
     const shortenerService = new UrlShortenerService();
-    const shortUrl = await shortenerService.shortenUrl(originalUrl);
+    await shortenerService.shortenUrl(originalUrl.trim());
     revalidatePath('/urls');
 
 }

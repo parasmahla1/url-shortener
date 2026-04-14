@@ -9,7 +9,12 @@ const fetchUrls = async () => {
 }
 
 export async function GET() {
-    const urls = await fetchUrls();
-    const response = NextResponse.json({urls})
-    return response; 
+    try {
+        const urls = await fetchUrls();
+        const response = NextResponse.json({urls})
+        return response;
+    } catch (error) {
+        console.error('Failed to fetch urls:', error);
+        return NextResponse.json({ error: 'Database unavailable' }, { status: 503 });
+    }
 }

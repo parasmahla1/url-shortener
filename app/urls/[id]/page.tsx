@@ -7,9 +7,9 @@ async function fetchOriginalUrl(url: string) {
     return response?.originalUrl;
 }
 
-export default async function urlRedirect({params}: {params: {id: string}}) {
-    console.log(params.id);
-    const original = await fetchOriginalUrl(`urls/${params.id}`);
+export default async function urlRedirect({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    const original = await fetchOriginalUrl(`urls/${id}`);
     if(original)
         redirect(original);
     redirect('/404');

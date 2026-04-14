@@ -4,7 +4,7 @@
 This is a simple URL shortener application that allows you to create short and memorable URLs for your long and complex ones.
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/your-username/url-shortener.git`
+1. Clone the repository: `git clone https://github.com/parasmahla1/url-shortener.git`
 2. Navigate to the project directory: `cd url-shortener`
 3. Install dependencies: `npm install`
 4. Configure the database connection in `lib/config/connectDb.js`

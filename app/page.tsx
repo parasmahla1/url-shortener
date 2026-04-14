@@ -9,7 +9,7 @@ export default function Home() {
           <h1 className="text-3xl font-bold mb-6 text-center text-gray-700">URL Shortener</h1>
   
   
-          <form method="POST" action={shortenUrl} className="space-y-6">
+          <form action={shortenUrl} className="space-y-6">
             <input type="text" placeholder="Enter URL" name="originalUrl" className="input input-bordered w-full" />
   
   
